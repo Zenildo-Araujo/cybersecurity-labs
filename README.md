@@ -13,9 +13,9 @@ Desenvolver competências práticas em:
 # Labs Concluídos
 ## 1. Network Scanning Basics
 ~~~javascript
-**Ferramentas usadas:** Nmap
-**Objectivo:** identificar portas abertas e serviços ativos.
-**Aprendi:** Como interpretar resultados de scan e identificar possíveis riscos.
+Ferramentas usadas: Nmap
+Objectivo: identificar portas abertas e serviços ativos.
+Aprendi: Como interpretar resultados de scan e identificar possíveis riscos.
 ~~~
 
 # Em progresso
