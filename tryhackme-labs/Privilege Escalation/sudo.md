@@ -6,5 +6,8 @@ https://gtfobins.github.io/ é uma fonte valiosa que fornece informações sobre
 
 ## Aproveite as funções do aplicativo
 Algumas aplicações não terão vulnerabilidades conhecidas nesse contexto. Um exemplo disso é o servidor Apache2.
+Carregar o ```/etc/shadow``` arquivo usando esta opção resultará em uma mensagem de erro que inclui a primeira linha do /etc/shadowarquivo.
+
+
 
 
