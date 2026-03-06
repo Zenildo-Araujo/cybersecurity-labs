@@ -32,9 +32,10 @@ O código C simplesmente criará um shell com privilégios de root e pode ser es
 
 Podemos salvar esse código como shell.c e compilá-lo usando o gcc em um arquivo de objeto compartilhado usando os seguintes parâmetros;
 
-```
+~~~
 gcc -fPIC -shared -o shell.so shell.c -nostartfiles
-```
+~~~
+
 Agora podemos usar esse arquivo de objeto compartilhado ao executar qualquer programa que nosso usuário possa executar com sudo. No nosso caso, o Apache2, o find ou quase qualquer outro programa que possamos executar com sudo podem ser usados.
 
 Precisamos executar o programa especificando a opção LD_PRELOAD, da seguinte forma;
@@ -49,7 +50,7 @@ sudo nmap --interactive
 ```
 What is the hash of frank's password?
 
-Os hashes de senha geralmente são armazenados no arquivo /etc/shadow. Vamos verificar se podemos acessá-lo com nossos privilégios atuais.
+Os hashes de senha geralmente são armazenados no arquivo ```/etc/shadow```. Vamos verificar se podemos acessá-lo com nossos privilégios atuais.
 Como esperado, um usuário padrão não pode acessar o arquivo. Precisamos usar os três comandos que identificamos e que podemos executar com privilégios de sudo.
 
 Vamos tentar todos eles.
