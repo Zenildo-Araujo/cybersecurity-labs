@@ -13,6 +13,6 @@ Exemplo de permissões
 
 Durante uma auditoria ou teste de penetração em Cibersegurança, é comum procurar ficheiros com SUID ativo.
 Comando:
-```
-find / -perm -4000 2>/dev/null
-```
+```find / -perm -4000 2>/dev/null```
+ls` listará os arquivos que possuem os bits SUID ou SGID definidos.
+```find / -type f -perm -04000 -ls 2>/dev/null```
