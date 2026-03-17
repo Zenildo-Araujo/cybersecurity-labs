@@ -71,6 +71,7 @@ O ficheiro resultante pode ser utilizado para tentativa de quebra de hash com **
 Outra abordagem consiste em criar um utilizador com privilégios administrativos.
 
 Primeiro foi gerado um hash de senha:
+<img width="433" height="79" alt="image" src="https://github.com/user-attachments/assets/59248b93-8891-410c-b27d-c400dc4cb7e0" />
 
 ```bash
 openssl passwd senha123
